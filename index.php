@@ -108,27 +108,6 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
 
  <div style="background-color:#ccc; border:3px solid black; padding:20px;">
 
-   <h2 style="color:red;">Snack 4</h2>
-   <hr>
-   <b>
-
-     <?php
-
-        $a = [];
-        while (count($a) < 15) {
-          $numRan = rand(1,100);
-          if (!in_array($numRan, $a)) {
-            $a[] = $numRan;
-          }
-        }
-        var_dump($a);
-      ?>
-
-   </b>
- </div>
-
- <div style="background-color:#ccc; border:3px solid black; padding:20px;">
-
    <h2 style="color:red;">Snack 3</h2>
    <hr>
    <br>
@@ -194,6 +173,27 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
           echo "<br><br>";
         }
       ?>
+   </b>
+ </div>
+
+ <div style="background-color:#ccc; border:3px solid black; padding:20px;">
+
+   <h2 style="color:red;">Snack 4</h2>
+   <hr>
+   <b>
+
+     <?php
+
+        $a = [];
+        while (count($a) < 15) {
+          $numRan = rand(1,100);
+          if (!in_array($numRan, $a)) {
+            $a[] = $numRan;
+          }
+        }
+        var_dump($a);
+      ?>
+
    </b>
  </div>
 
