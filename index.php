@@ -10,7 +10,12 @@ Snack 3
 Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
 Snack 5
 Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi <p>. Ogni punto un nuovo paragrafo.
+Snack 6
+Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.
+Snack 7
+Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
  -->
+
 
  <div style="background-color:#ccc; border:3px solid black; padding:30px;">
 
@@ -229,3 +234,97 @@ Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il pa
    </b>
 
  </div>
+
+ <div style="background-color:#ccc; border:3px solid black; padding:20px;">
+
+   <h2 style="color:red;">Snack 6</h2>
+   <hr>
+   <br>
+
+   <b>
+
+     <?php
+
+     $db = [
+       'teachers' => [
+         [
+           'name' => 'Michele',
+           'lastname' => 'Papagni'
+         ],
+         [
+           'name' => 'Fabio',
+           'lastname' => 'Forghieri'
+         ]
+       ],
+       'pm' => [
+         [
+           'name' => 'Roberto',
+           'lastname' => 'Marazzini'
+         ],
+         [
+           'name' => 'Federico',
+           'lastname' => 'Pellegrini'
+         ]
+       ]
+     ];
+
+     foreach ($db as $key => $value) {
+
+       echo $key;
+
+       foreach ($value as $p) {
+
+         if ($key === 'teachers') {
+           echo '<div style="background-color:red;">' . $p["name"] . " " . $p["lastname"] . '</div>';
+         } else if($key === 'pm') {
+           echo '<div style="background-color:green;">' . $p["name"] . " " . $p["lastname"] . '</div>';
+         }
+       }
+
+       echo "<br>";
+     }
+
+     ?>
+
+
+   </b>
+
+ </div>
+
+<div style="background-color:#ccc; border:3px solid black; padding:20px;">
+
+  <h2 style="color:red;">Snack 7</h2>
+  <hr>
+  <br>
+
+  <b>
+
+    <?php
+
+      $voti = [
+        'Mario Rossi' => [
+          5, 7, 9, 5, 5, 6, 7, 8
+        ],
+        'Francesca Bianchi' => [
+          9, 10, 9, 9, 8, 9, 10, 10
+        ]
+      ];
+      foreach ($voti as $name => $v) {
+        echo $name . ": ";
+        // VERSIONE 1
+        // $sum = 0;
+        // foreach ($v as $voto) {
+        //
+        //     $sum += $voto;
+        // }
+        // $avg = $sum / count($v);
+        // VERSIONE 2
+        $avg = array_sum($v) / count($v);
+        echo $avg;
+        echo "<br>";
+      };
+    ?>
+
+  </b>
+
+</div>
